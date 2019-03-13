@@ -1,7 +1,6 @@
 import Nerv from 'nervjs'
 import { View } from '@tarojs/components'
 import sinon from 'sinon'
-
 import Timer from '../../../.temp/components/timer/timer'
 
 describe('Timer test', () => {
