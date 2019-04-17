@@ -1,0 +1,37 @@
+@import '../../mixins.scss';
+.date-range {
+  display: flex;
+  align-items: center;
+  &-item {
+    flex: 1;
+  }
+  &-divide {
+    width: 86px;
+    text-align: center;
+  }
+  &-header {
+    $height: 80px;
+    display: flex;
+    align-items: center;
+    height: $height;
+    padding: 0 60px;
+    margin-bottom: 40px;
+    border-bottom: solid 2px #f1f1f1;
+    &-cancel {
+      line-height: $height;
+      color: $grayColor;
+    }
+    &-error {
+      flex: 1;
+      text-align: center;
+      color: $errorColor;
+    }
+    &-confirm {
+      line-height: $height;
+      color: $primaryColor;
+    }
+  }
+  &-body {
+    background: #fff;
+  }
+}

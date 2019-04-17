@@ -1,0 +1,119 @@
+@import '../../mixins.scss';
+.mask {
+  @include mask();
+  display: flex;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  &-position {
+    &-top {
+      align-items: flex-start;
+    }
+    &-bottom {
+      align-items: flex-end;
+    }
+  }
+  &-fade {
+    &-enter {
+      animation-name: fadeEnter;
+    }
+    &-leave {
+      animation-name: fadeLeave;
+    }
+  }
+  &-content {
+    width: 100%;
+    animation-fill-mode: forwards;
+    animation-duration: 0.2s;
+    animation-timing-function: cubic-bezier(.17, .65, .44, .93);
+    &-slideDown {
+      &-enter {
+        animation-name: slideDownEnter;
+      }
+      &-leave {
+        animation-name: slideDownLeave;
+      }
+    }
+    &-slideUp {
+      &-enter {
+        animation-name: slideUpEnter;
+      }
+      &-leave {
+        animation-name: slideUpLeave;
+      }
+    }
+  }
+}
+
+@keyframes fadeEnter {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opcity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeLeave {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opcity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownEnter {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  99% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: none; // 修复由 transform 为非 'none' 产生的层叠上下文引起 position: fixed 失效问题
+  }
+}
+
+@keyframes slideDownLeave {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  99% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes slideUpEnter {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  99% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes slideUpLeave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  99% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
