@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.ft-date-picker {
+  &:empty {
+    display: none;
+  }
+
+  &-body {
+    background: #fff;
+  }
+
+  $height: 80px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: $height;
+    margin-bottom: 40px;
+    @include one-px();
+  }
+
+  &-cancel {
+    padding: 0 32px;
+    line-height: $height;
+    color: $text-color-secondary;
+  }
+
+  &-title {
+    flex: 1;
+    text-align: center;
+  }
+
+  &-confirm {
+    padding: 0 32px;
+    line-height: $height;
+    color: $primary-color;
+  }
+}

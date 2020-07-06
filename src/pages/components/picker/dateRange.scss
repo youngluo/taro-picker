@@ -1,0 +1,43 @@
+.date-range {
+  display: flex;
+  align-items: center;
+
+  &-item {
+    flex: 1;
+  }
+
+  &-divide {
+    width: 86px;
+    text-align: center;
+  }
+
+  &-header {
+    $height: 80px;
+    display: flex;
+    align-items: center;
+    height: $height;
+    padding: 0 60px;
+    margin-bottom: 40px;
+    border-bottom: solid 1px $border-color-base;
+
+    &-cancel {
+      line-height: $height;
+      color: $text-color-secondary;
+    }
+
+    &-error {
+      flex: 1;
+      text-align: center;
+      color: $error-color;
+    }
+
+    &-confirm {
+      line-height: $height;
+      color: $primary-color;
+    }
+  }
+
+  &-body {
+    background: #fff;
+  }
+}

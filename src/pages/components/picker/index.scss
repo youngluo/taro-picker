@@ -1,0 +1,50 @@
+.ft-picker {
+  background: #fff;
+
+  &-children:empty {
+    display: none;
+  }
+
+  $height: 80px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: $height;
+    @include one-px();
+
+    &-title {
+      flex: 1;
+      text-align: center;
+    }
+
+    &-cancel {
+      padding: 0 32px;
+      line-height: $height;
+      color: $text-color-secondary;
+    }
+
+    &-confirm {
+      padding: 0 32px;
+      line-height: $height;
+      color: $primary-color;
+    }
+  }
+
+  &-body {
+    display: flex;
+
+    &-view {
+      flex: 1;
+      height: 560px;
+    }
+
+    &-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+  }
+}
