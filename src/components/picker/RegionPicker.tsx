@@ -34,12 +34,12 @@ const RegionPicker: FC<IProps> = props => {
 
   const getData = useCallback(async () => {
     if (!_.isEmpty(fullData.current)) return fullData.current
-    const result = store.getItem('regionData')
+    const result = store.getItem('region')
     if (!_.isEmpty(result)) return result
     const [error, response] = await util.promiseCatcher(http.get('/address'))
     if (error) return util.handleError(error)
     const dataList = _.get(response, 'results')
-    store.setItem('regionData', dataList)
+    store.setItem('region', dataList)
 
     return dataList
   }, [])

@@ -9,14 +9,14 @@ import './dateRange.scss'
 
 interface IProps {
   onConfirm?(value: string[]): void;
-  onCancel?():void;
+  onCancel?(): void;
   placeholder: string[];
   confirmText: string;
   cancelText: string;
   start: string;
   end: string;
-  maskVisible?:boolean;
-  hiddenPlaceholder?:boolean;
+  maskVisible?: boolean;
+  hiddenPlaceholder?: boolean;
 }
 
 class DateRange extends Component<IProps> {
@@ -45,6 +45,10 @@ class DateRange extends Component<IProps> {
 
   tempValue: string[] = []
 
+  componentDidMount() {
+    console.error('DateRange 组件即将被废弃，请使用 import { DatePicker } from \'@/components\' 代替')
+  }
+
   onConfirm = () => {
     if (!this.props.onConfirm) return
 
@@ -68,7 +72,7 @@ class DateRange extends Component<IProps> {
   }
 
   onCancel = () => {
-    const {onCancel} = this.props
+    const { onCancel } = this.props
     this.setState({ visible: false })
     onCancel && onCancel()
   }
@@ -97,10 +101,10 @@ class DateRange extends Component<IProps> {
             </View>
           </View>
         }
-     
+
         <Mask
           onCancel={this.onCancel}
-          visible={maskVisible||visible}
+          visible={maskVisible || visible}
           position='bottom'
           type='slideUp'
         >
